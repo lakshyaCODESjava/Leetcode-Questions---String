@@ -1,0 +1,21 @@
+import java.util.*;
+class Solution {
+    public int strStr(String haystack, String needle) {
+            int lenneedle = needle.length();
+            int lenhay = haystack.length();
+            String temp="";
+            for(int x=0;x<lenhay;x++)
+            {
+                if(x<=lenhay-lenneedle)
+                {
+                    temp = haystack.substring(x,x+lenneedle);
+                    if(temp.equals(needle))
+                    {
+                        return x;
+                    }
+                }
+            }
+            return -1;
+
+    }
+}
