@@ -1,0 +1,19 @@
+import java.util.*;
+class Solution {
+    public int firstUniqChar(String s) {
+        int hash[]=new int[26];
+        for(int x=0;x<s.length();x++)
+        {
+            char ch = s.charAt(x);
+            hash[(int)ch-97]++;
+        }
+        for(int x=0;x<s.length();x++)
+        {
+            char ch = s.charAt(x);
+            int index1 = x;
+            int index2 = s.lastIndexOf(ch);
+            if(index1==index2 && hash[(int)ch-97]==1) return x;
+        }
+        return -1;
+    }
+}
