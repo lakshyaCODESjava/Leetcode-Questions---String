@@ -1,0 +1,26 @@
+import java.util.*;
+class Solution {
+    public char findTheDifference(String s, String t) {
+        int ar1[]=new int[26];
+        int ar2[]=new int[26];
+        for(int x=0;x<s.length();x++)
+        {
+            char ch=s.charAt(x);
+            ar1[ch-97]++;
+        }
+        for(int x=0;x<t.length();x++)
+        {
+            char ch = t.charAt(x);
+            ar2[ch-97]++;
+        }
+        int ans=-1;
+        for(int x=0;x<26;x++)
+        {
+            if(ar1[x]!=ar2[x])
+            {
+                ans = x+97;
+            }
+        }
+        return (char)ans;
+    }
+}
