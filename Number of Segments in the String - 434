@@ -1,0 +1,17 @@
+import java.util.*;
+class Solution {
+    public int countSegments(String str) {
+        str = str.trim();
+        int len = str.length();
+        if(len==0) return 0;
+        int count = 0;
+        for(int x=0;x<len;x++)
+        {
+            char ch = str.charAt(x);
+            if(x<len-1 && str.charAt(x+1)==' ') continue;
+            if(ch==' ') count++;
+        }
+        if(count == 0) return 1;
+        else return count+1;
+    }
+}
