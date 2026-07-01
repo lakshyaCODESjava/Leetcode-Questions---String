@@ -1,0 +1,31 @@
+class Solution {
+    public boolean checkRecord(String s) {
+        char ch[]=new char[s.length()];
+        for(int x=0;x<s.length();x++)
+        {
+            ch[x] = s.charAt(x);
+        }
+        int late = 0;
+        int absent = 0;
+        for(int x=0;x<ch.length;x++)
+        {
+            if(ch[x]=='A') absent+=1;
+            if(ch[x]=='L') late+=1;
+        }
+        if(absent>=2) return false;
+        if(absent<2 && late<3) return true;
+        boolean found=false;
+        if(late>=3)
+        {
+            for(int x=0;x<ch.length-2;x++)
+            {
+                if(ch[x]=='L' && ch[x+1]=='L' && ch[x+2]=='L')
+                {
+                    found=true;break;
+                }
+            }
+        }
+         if(found==true) return false;
+         else return true;
+    }
+}
