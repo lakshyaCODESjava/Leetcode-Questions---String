@@ -1,0 +1,20 @@
+import java.util.*;
+class Solution {
+    public String reverseWords(String s) {
+        String ans="";
+        StringTokenizer st=new StringTokenizer(s);
+        while(st.hasMoreTokens())
+        {
+            String temp = st.nextToken();
+            for(int x=temp.length()-1;x>=0;x--)
+            {
+                ans = ans + temp.charAt(x);
+            }
+            if(st.hasMoreTokens()==true)
+            {
+                ans += " ";
+            }
+        }
+        return ans;
+    }
+}
