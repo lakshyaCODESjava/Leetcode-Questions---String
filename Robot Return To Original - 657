@@ -1,0 +1,15 @@
+class Solution {
+    public boolean judgeCircle(String moves) {
+        int up=0,down=0,left=0,right=0;
+        for(int x=0;x<moves.length();x++)
+        {
+            char check = moves.charAt(x);
+            if(check=='L') left++;
+            else if(check=='R') right++;
+            else if(check=='U') up++;
+            else down++; 
+        }
+        if(left==right && up==down) return true;
+        return false;
+    }
+}
