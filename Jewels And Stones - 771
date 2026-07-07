@@ -1,0 +1,25 @@
+class Solution {
+    public int numJewelsInStones(String jewels, String stones) {
+        int len1 = jewels.length();
+        int len2 = stones.length();
+        char ch1[] = new char[len1];
+        char ch2[] = new char[len2];
+        for(int x=0;x<len1;x++)
+        {
+            ch1[x] = jewels.charAt(x);
+        }
+        for(int x=0;x<len2;x++)
+        {
+            ch2[x] = stones.charAt(x);
+        }
+        int count=0;
+        for(int x=0;x<len1;x++)
+        {
+            for(int y=0;y<len2;y++)
+            {
+                if(ch1[x]==ch2[y]) count++;
+            }
+        }
+        return count;
+    }
+}
