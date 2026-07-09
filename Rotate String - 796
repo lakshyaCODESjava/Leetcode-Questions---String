@@ -1,0 +1,36 @@
+class Solution {
+    public boolean rotateString(String s, String goal) {
+        if(s.length()!=goal.length()) return false;
+        char str[]=new char[s.length()];
+        for(int x=0;x<s.length();x++)
+        {
+            str[x] = s.charAt(x);
+        }
+        char req[]=new char[s.length()];
+        for(int x=0;x<goal.length();x++)
+        {
+            req[x] = goal.charAt(x);
+        }
+        int rotate = 0;
+        while(rotate<s.length())
+        {
+            char temp = str[0];
+            for(int x=0;x<s.length()-1;x++)
+            {
+                str[x] = str[x+1];
+            }
+            str[s.length()-1] = temp;
+            rotate++;
+            boolean same = true;
+            for(int x=0;x<goal.length();x++)
+            {
+                if(str[x]!=req[x]) 
+                {
+                    same = false;
+                }
+            }
+            if(same==true) return true;
+        }
+        return false;
+    }
+}
