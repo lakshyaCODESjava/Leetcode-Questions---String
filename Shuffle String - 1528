@@ -1,0 +1,25 @@
+class Solution {
+    int searchindex(int[] indices,int x)
+    {
+        for(int i=0;i<indices.length;i++)
+        {
+            
+            if(indices[i]==x) return i;
+        }
+        return -1;
+    }
+    public String restoreString(String s, int[] indices) {
+        char ans[]=new char[indices.length];
+        for(int x=0;x<indices.length;x++)
+        {
+            ans[x] = s.charAt(searchindex(indices,x));
+        }
+        String a="";
+
+        for(int x=0;x<indices.length;x++)
+        {
+            a = a + ans[x];
+        }
+        return a;
+    }
+}
