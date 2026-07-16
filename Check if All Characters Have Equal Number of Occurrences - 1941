@@ -1,0 +1,24 @@
+class Solution {
+    public boolean areOccurrencesEqual(String s) {
+        int heap[]=new int[26];
+        for(int x=0;x<s.length();x++)
+        {
+            char ch = s.charAt(x);
+            heap[ch-'a']++; 
+        }
+        // boolean check = true;
+        int freq = heap[s.charAt(0)-'a'];
+        // for(int x=0;x<26;x++)
+        // {
+        //     if(heap[x]>0) { freq=heap[x]; break; }
+        // }
+        for(int x=0;x<26;x++)
+        {
+            if(heap[x]!=0 && heap[x]!=freq)  
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+}
