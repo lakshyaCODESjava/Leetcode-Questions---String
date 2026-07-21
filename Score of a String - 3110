@@ -1,0 +1,13 @@
+import java.util.*;
+class Solution {
+    public int scoreOfString(String str) 
+    {
+        int len = str.length();
+        int sum = 0;
+        for(int x=0;x<len-1;x++)
+        {
+            sum = sum + Math.abs(((int)str.charAt(x))-((int)str.charAt(x+1)));
+        }
+        return sum;
+    }
+}
