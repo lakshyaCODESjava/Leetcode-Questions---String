@@ -1,0 +1,27 @@
+class Solution {
+    public int numberOfSpecialChars(String word) {
+        int small[]=new int[26];
+        int capital[]=new int[26];
+        for(int x=0;x<word.length();x++)
+        {
+            char ch = word.charAt(x);
+            if(ch>='a' && ch<='z')
+            {
+                if(small[ch-'a']==0) small[ch-'a']++;
+            }
+            else
+            {
+                if(capital[ch-'A']==0) capital[ch-'A']++;
+            }
+        }
+        int count = 0;
+        for(int x=0;x<26;x++)
+        {
+            if(small[x]==1 && capital[x]==1)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+}
