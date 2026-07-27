@@ -1,0 +1,21 @@
+class Solution {
+    public boolean scoreBalance(String s) {
+        int hash[]=new int[26];
+        for(int x=0;x<s.length()-1;x++)
+        {
+            int score1 = 0;
+            int score2 = 0;
+            for(int y=0;y<=x;y++)
+            {
+                score1+=(int)(s.charAt(y))-96;
+            }
+            for(int z=x+1;z<s.length();z++)
+            {
+                score2+=(int)(s.charAt(z))-96;
+            }
+            if(score1==score2) return true;
+        }
+        return false;
+
+    }
+}
